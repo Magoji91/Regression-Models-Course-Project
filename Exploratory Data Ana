@@ -70,7 +70,7 @@ boxplot(mpg~am, data = mtcars,
         ylab = "Miles per Gallon",
         main = "MPG by Transmission Type")
  
- OBS: The data show that the manual transmission is better than the automatic transmission for fuel economy as long as the conditions of temperature and pressure are maintained, that is, that the other conditions remain unchanged.
+OBS: At first sight, the manual transmission is better than the automatic transmission for fuel economy as long as the conditions of temperature and pressure are maintained, that is, that the other conditions remain unchanged.
  
 
 II-) Regression model
