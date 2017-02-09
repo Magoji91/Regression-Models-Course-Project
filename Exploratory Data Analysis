@@ -70,11 +70,12 @@ boxplot(mpg~am, data = mtcars,
         ylab = "Miles per Gallon",
         main = "MPG by Transmission Type")
  
-OBS: At first sight, the manual transmission is better than the automatic transmission for fuel economy as long as the conditions of temperature and pressure are maintained, that is, that the other conditions remain unchanged.
+CONCLUSION: At first glance, manual transmission is better than the automatic transmission for fuel economy, as long as the temperature and pressure conditions are maintained, that is, as long as the other conditions remain unchanged.
  
 
-II-) Regression model
-Use the stepwise model, which uses the regression method backwards to avoid constructing models 2^10−1 = 1023 models for optimization.
+II-) REGRESSION MODEL
+
+The regression model to be used will be "stepwise", which allows selecting a subset of effects for a regression model, adding a more significant variable (direct selection) or removing a less significant variable, as is the case.
 RESUMING: “Don’t kid yourself: very few questions are unique.” - Paul Teetor, R Cookbook
 
 # backward elimination
@@ -176,6 +177,18 @@ unique.model
 ## lm(formula = mpg ~ wt + qsec + am, data = mtcars)
 lm.unique <- lm(mpg ~ wt + factor(am) + qsec)
 summary(lm.unique)$coef;print(c('R-squared',round(summary(lm.unique)$r.sq,2)))
+
+##             Estimate Std. Error t value  Pr(>|t|)
+## (Intercept)    9.618     6.9596   1.382 1.779e-01
+## wt            -3.917     0.7112  -5.507 6.953e-06
+## factor(am)1    2.936     1.4109   2.081 4.672e-02
+## qsec           1.226     0.2887   4.247 2.162e-04
+## [1] "R-squared" "0.85"
+
+CONCLUSION: 
+It is concluded that the model used addresses 84% of the cases of variation in miles per gallon (mpg); Therefore, according to the model, cars with manual transmissions are more economical, because it has a better use in approximately 2.94 mpgs.
+
+APPENDIX:
 
 plot(lm.unique,which=1)
 The points in the Residuals Vs. Fitted are randomly dispersed which points to a condition of independence.
