@@ -181,5 +181,5 @@ plot(lm.unique,which=1)
 The points in the Residuals Vs. Fitted are randomly dispersed which points to a condition of independence.
 
 plot(lm.unique,which=2)
-The Normal Q-Q graph shows that the points that are close to the rows and represent the residuals are normally distributed.
+The Normal Q-Q graph shows that the points that are close to the lines and represent the residues are normally distributed, which proves that the statistical inferences are valid.
                        
